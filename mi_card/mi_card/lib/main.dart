@@ -7,72 +7,89 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-        home :Scaffold(
+        home: Scaffold(
           backgroundColor: Colors.teal,
           body: SafeArea(
-
-            child: Row(
-              
-              children: <Widget>[
-            Container(
-            margin: EdgeInsets.only(left: 20.0),
-            padding: EdgeInsets.fromLTRB(3.0, 2.0, 5.0, 4.0),
-            color: Colors.white,
-            child: Text("hello1"),
-            ),
-                Container(
-                  height: 20.0,
-                width: 50.0,
-                margin: EdgeInsets.only(left: 5.0),
-
-
-                  child: Text("hello2"),
-            ), 
-                
-                SizedBox(
-                  height: 20.0,
-                  width: 20.0,
+              child: Column(
+                children: <Widget>[
+                CircleAvatar(
+                  backgroundColor: Colors.red,
+                  backgroundImage: AssetImage('images/abc.jpg'),
+                  radius: 60,
                 ),
+                Text(
+                  "Bishal Bhattarai",
 
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          margin: EdgeInsets.only(left: 20.0),
-                          padding: EdgeInsets.fromLTRB(3.0, 2.0, 5.0, 4.0),
-                          color: Colors.white,
-                          child: Text("hello3"),
-                        ),
-                      ),
-                    ),
+                  style: TextStyle(
+                    fontFamily: 'Pacifico',
+                    fontSize: 40.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                Column(
-                  children: <Widget>[
-                    Image(
-                        height: 200.0,
-                        width: 300.0,
-
-                        image: NetworkImage("https://media.gettyimages.com/photos/starry-night-picture-id519760984?s=2048x2048")
+                  Text(
+                    "FLUTTER DEVELOPER",
+                    style: TextStyle(
+                      fontFamily: 'DancingScript',
+                      fontSize: 20.0,
+                      color: Colors.teal.shade100,
+                      letterSpacing: 2.0
 
                     ),
-                    SizedBox(
-                      height: 2.0,
+                  ),
+                  Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.all(10.0),
+                    margin: EdgeInsets.symmetric(horizontal: 25.0,vertical: 10.0),
+                    child: Row(
+                      children: <Widget>[
+                      Icon(
+                       Icons.phone,
+                        color: Colors.teal,
+
+                      ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text('+123456789',
+                          style:TextStyle(
+                            fontFamily:'DancingScript',
+                            fontSize: 20.0,
+                            letterSpacing: 2.0
+                          ),
+                        ),
+
+                    ],
                     ),
-                    Image(
-                      height: 200.0,
-                      width: 300.0,
-                      image: NetworkImage("https://media.gettyimages.com/photos/portrait-of-beautiful-woman-without-makeup-picture-id641576958?s=2048x2048"),
-                    )
+                  ),
+                  Container(color: Colors.white,
+                    padding: EdgeInsets.all(10.0),
+                    margin: EdgeInsets.symmetric(horizontal: 25.0,vertical: 10.0),
+                    child: Row(children: <Widget>[
+                    Icon(
+                      Icons.email,
+                      color: Colors.teal,
+
+                    ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+
+                      Text('abc@gmail.com',
+                      style:TextStyle(
+                          fontFamily:'DancingScript',
+                          fontSize: 20.0,
+                          letterSpacing: 2.0
+                      ),
+                    ),
                   ],
-                ),
-            ],
-            ),
-            ),
+                    ),
+                  ),
+              ],
+              )
+
           ),
+        ),
         );
 
   }
