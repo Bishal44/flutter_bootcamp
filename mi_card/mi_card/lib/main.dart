@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.teal,
           body: SafeArea(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                 CircleAvatar(
                   backgroundColor: Colors.red,
@@ -37,31 +38,37 @@ class MyApp extends StatelessWidget {
 
                     ),
                   ),
-                  Container(
+                  SizedBox(
+                    height: 20.0,
+                    width: 150.0,
+                    child: Divider(
+                      color: Colors.teal.shade200,
+                    ),
+                  ),
+                  Card(
                     color: Colors.white,
-                    padding: EdgeInsets.all(10.0),
                     margin: EdgeInsets.symmetric(horizontal: 25.0,vertical: 10.0),
-                    child: Row(
-                      children: <Widget>[
-                      Icon(
-                       Icons.phone,
+                    child: Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: ListTile(
+                        leading:Icon(
+                        Icons.phone,
                         color: Colors.teal,
-
                       ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-                        Text('+123456789',
+
+                        title:Text('+123456789',
                           style:TextStyle(
-                            fontFamily:'DancingScript',
-                            fontSize: 20.0,
-                            letterSpacing: 2.0
+                              fontFamily:'DancingScript',
+                              fontSize: 20.0,
+                              letterSpacing: 2.0
                           ),
                         ),
 
-                    ],
+                      ),
+
+                        ),
                     ),
-                  ),
+
                   Container(color: Colors.white,
                     padding: EdgeInsets.all(10.0),
                     margin: EdgeInsets.symmetric(horizontal: 25.0,vertical: 10.0),
