@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                     color: Colors.white,
                     margin: EdgeInsets.symmetric(horizontal: 25.0,vertical: 10.0),
                     child: Padding(
-                      padding: EdgeInsets.all(20.0),
+                      padding: EdgeInsets.all(2.0),
                       child: ListTile(
                         leading:Icon(
                         Icons.phone,
