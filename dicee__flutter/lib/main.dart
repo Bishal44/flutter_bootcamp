@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   return runApp(
@@ -23,6 +24,7 @@ class DicePage extends StatefulWidget {
 class _DicePageState extends State<DicePage> {
   int leftDiceNumber=2;
   int rightDiceNumber=4;
+
   Widget build(BuildContext context) {
     return Center(
       child: Row(
@@ -32,11 +34,10 @@ class _DicePageState extends State<DicePage> {
             flex: 1,
             child: FlatButton(
               onPressed: (){
-                setState(() {
-                  leftDiceNumber=5;
-                });
+                 changestate();
                 //print('left button pressed');
-                _showToast(context);
+
+                //_showToast(context);
 
               },
               child: Image(
@@ -53,10 +54,11 @@ class _DicePageState extends State<DicePage> {
             flex: 1,
             child: FlatButton(
               onPressed: (){
-                setState(() {
-                  rightDiceNumber=2;
-                });
-                _showToast(context);
+
+                 changestate();
+
+
+                //_showToast(context);
               },
               child: Image.asset("images/dice$rightDiceNumber.png"),
             ),
@@ -72,11 +74,18 @@ class _DicePageState extends State<DicePage> {
     final scaffold = Scaffold.of(context);
     scaffold.showSnackBar(
       SnackBar(
-        content: const Text('Right button pressed'),
+        content: const Text( 'button pressed'),
         action: SnackBarAction(
             label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
+  }
+
+  void changestate() {
+    setState(() {
+    leftDiceNumber=Random().nextInt(6)+1;
+    rightDiceNumber=Random().nextInt(6)+1;
+      });
   }
 }
 
